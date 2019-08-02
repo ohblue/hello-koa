@@ -18,5 +18,5 @@ app.use(bodyParser());
 // add controllers:
 app.use(controller());
 
-app.listen(3000);
-console.log('app started at port 3000...');
+app.listen(80);
+console.log('app started at port 80...');
