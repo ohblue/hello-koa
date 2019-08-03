@@ -6,6 +6,8 @@ const controller = require('./controller');
 
 const app = new Koa();
 
+const port = process.env.PORT || 3000;
+
 // log request URL:
 app.use(async (ctx, next) => {
     console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
@@ -18,5 +20,6 @@ app.use(bodyParser());
 // add controllers:
 app.use(controller());
 
-app.listen(80);
-console.log('app started at port 80...');
+app.listen(port, function(){
+	console.log('Listening on ', port);
+});
